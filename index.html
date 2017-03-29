@@ -152,6 +152,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-MYSQL分页limit速度太慢优化方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/29/MYSQL分页limit速度太慢优化方法/">MYSQL分页limit速度太慢优化方法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/29/MYSQL分页limit速度太慢优化方法/" class="archive-article-date">
+  	<time datetime="2017-03-29T06:45:47.967Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>@(wildwind)[mysql|limit]</p>
+<p>本文出自：<a href="http://blogread.cn/it/article/7954?f=wb">http://blogread.cn/it/article/7954?f=wb</a></p>
+<p>在mysql中limit可以实现快速分页，但是如果数据到了几百万时我们的limit必须优化才能有效的合理的实现分页了，否则可能卡死你的服务器哦。</p>
+<p>当一个表数据有几百万的数据的时候成了问题！</p>
+<p>如 * from table limit 0,10 这个没有问题 当 limit 200000,10 的时候数据读取就很慢，可以按照以下方法解决：</p>
+<p>limit 10000,20的意思扫描满足条件的10020行，扔掉前面的10000行，返回最后的20行，问题就在这里。</p>
+<p>LIMIT 451350 , 30 扫描了45万多行，怪不得慢的都堵死了。</p>
+<p> 但是</p>
+<p> limit 30 这样的语句仅仅扫描30行。<br>
+        
+          <a class="article-more-a" href="/2017/03/29/MYSQL分页limit速度太慢优化方法/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">limit</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/29/MYSQL分页limit速度太慢优化方法/">展示全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -327,6 +403,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">limit</a>
               </li>
             
             <div class="clearfix"></div>
